@@ -9,10 +9,8 @@ const listingSchema = new Schema({
     description: String,
     image: {
         type: String,
-        default:
-            "https://images.unsplash.com/photo-1696650811922-9a14bf80be8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-        Set: (v) => v === "" ?
-            "https://images.unsplash.com/photo-1696650811922-9a14bf80be8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" : v,
+        default: "https://c4.wallpaperflare.com/wallpaper/368/492/901/burj-khalifa-dubai-city-cityscape-wallpaper-preview.jpg",
+        set: (v) => (v === "" ? "https://c4.wallpaperflare.com/wallpaper/368/492/901/burj-khalifa-dubai-city-cityscape-wallpaper-preview.jpg" : v),
     },
     price: Number,
     location: String,
