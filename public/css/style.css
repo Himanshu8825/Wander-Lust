@@ -68,6 +68,10 @@ body {
     margin-bottom: 2rem;
 }
 
+.card1 {
+    border: 1px solid rgba(0, 0, 0, 0.286) !important;
+}
+
 .card-img-top {
     border-radius: 0.85rem !important;
     width: 100% !important;
