@@ -10,8 +10,8 @@ const listingSchema = new Schema({
     description: String,
     image: {
         type: String,
-        default: "https://c4.wallpaperflare.com/wallpaper/368/492/901/burj-khalifa-dubai-city-cityscape-wallpaper-preview.jpg",
-        set: (v) => (v === "" ? "https://c4.wallpaperflare.com/wallpaper/368/492/901/burj-khalifa-dubai-city-cityscape-wallpaper-preview.jpg" : v),
+        default: "https://picsum.photos/seed/picsum/300/700",
+        set: (v) => (v === "" ? "https://picsum.photos/seed/picsum/200/300" : v),
     },
     price: Number,
     location: String,

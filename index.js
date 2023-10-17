@@ -9,6 +9,8 @@ const ejsMate = require('ejs-mate');
 
 const listings = require('./routes/listing');
 const reviews = require('./routes/review');
+const session = require('express-session');
+const flash = require('connect-flash');
 
 
 //! Get the MongoDB URI from environment variables
@@ -38,12 +40,26 @@ app.engine('ejs', ejsMate);
 //! app.use(express.static, path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, "/public")));
 
-
 //! Define a route for the root path ('/') and send a simple response
 app.get('/', (req, res) => {
     res.send("Hey, I'm root");
 });
 
+
+const sessionOption = {
+    secret: 'mysupersecretcode',
+    resave: false,
+    saveUninitialized: true
+};
+
+app.use(session(sessionOption));
+app.use(flash());
+
+app.use((req, res, next) => {
+    res.locals.success = req.flash("success");
+    res.locals.error = req.flash("error");
+    next();
+})
 
 app.use('/listings', listings);
 app.use('/listings/:id/reviews', reviews);
