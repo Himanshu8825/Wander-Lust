@@ -1,24 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-light light border-bottom sticky-top">
-    <a class="navbar-brand" href="#"><i class="fa-regular fa-compass m-2"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/listings">All Listing</a>
-            <a class="nav-item nav-link" href="/listings/new">Add Listing</a>
-        </div>
-        <div class="navbar-nav ms-auto">
-            <% if (!currUser) { %>
-                <a class="nav-item nav-link active " href="/signup">Sign up <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/login">Log in</a>
-            <% } %>
-           <% if (currUser) { %>
-            <a class="nav-item nav-link" href="/logout">Log out</a>
-           <% } %>
-            
-        </div>
+<style>
+  .btn2 {
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+    height: 90% !important;
+    width: 50%;
+  }
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem !important;
+    width: 100% !important;
+  }
+</style>
+
+<nav
+  class="navbar navbar-expand-lg navbar-light light border-bottom sticky-top"
+>
+  <a class="navbar-brand" href="#"><i class="fa-regular fa-compass m-2"></i></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/listings"><b>Explore</b></a>
     </div>
+    <div class="navbar-nav ms-auto">
+      <form class="d-flex" role="search">
+        <input
+          class="form-control mr-sm-2 search-inp"
+          type="search"
+          placeholder="Search destination"
+        />
+        <button class="btn add-btn btn2 my-2 my-sm-0 m-2" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-item nav-link" href="/listings/new"
+        ><b>Airbnb your home</b></a
+      >
+      <% if (!currUser) { %>
+      <a class="nav-item nav-link active" href="/signup"
+        ><b>Sign up</b> <span class="sr-only">(current)</span></a
+      >
+      <a class="nav-item nav-link" href="/login"><b>Log in</b></a>
+      <% } %> <% if (currUser) { %>
+      <a class="nav-item nav-link" href="/logout"><b>Log out</b></a>
+      <% } %>
+    </div>
+  </div>
 </nav>

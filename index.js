@@ -45,10 +45,10 @@ app.engine('ejs', ejsMate);
 //! app.use(express.static, path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, "/public")));
 
-//! Define a route for the root path ('/') and send a simple response
-app.get('/', (req, res) => {
-    res.send("Hey, I'm root");
-});
+// //! Define a route for the root path ('/') and send a simple response
+// app.get('/', (req, res) => {
+//     res.send("Hey, I'm root");
+// });
 
 
 const sessionOption = {
