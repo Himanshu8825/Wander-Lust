@@ -1,5 +1,10 @@
 <% layout("/layouts/boilerplate") %>
 
+    <script>
+        const mapTopken = "<%= process.env.MAPBOX_TOKEN%>";
+        const coordinates = <%-JSON.stringify(listing.geometry.coordinates) %>;
+
+    </script>
     <body>
 
         <div class="row">
@@ -74,9 +79,13 @@
                 <hr>
                 <% } %>
                 
-                <p><b>All Review</b></p>
+                
                 <ul>
+                    <% if (listing.reviews.length > 0) { %>
+                     
+                   
                     <div class="row">
+                        <p><b>All Review</b></p>
                         <% for (let review of listing.reviews) { %>
                             <div class="card card1 mb-3 ms-3 col-5">
                                 <div class="card-body">
@@ -91,10 +100,18 @@
                             </div>
                         <% } %>
                     </div>
-                    
+                    <% } %>
                 </ul>
+                
+            </div>
+            <div class="col-6 offset-3 mb-3">
+                <h2>Where You'll be </h2>
+                <div id="map"></div>
             </div>
 
         </div>
+  
 
     </body>
+    
+    <script src="/js/map.js"></script>      

@@ -241,3 +241,7 @@ label {
     color: #999999;
 }
 
+#map{
+    width: 90vh;
+    height: 400px;
+}
