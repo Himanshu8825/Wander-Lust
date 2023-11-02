@@ -9,9 +9,8 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    type: String,
-    default: "https://picsum.photos/seed/picsum/300/700",
-    set: (v) => (v === "" ? "https://picsum.photos/seed/picsum/200/300" : v),
+    url: String,
+    filename: String,
   },
   price: Number,
   location: String,
@@ -27,8 +26,6 @@ const listingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-
-  
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
