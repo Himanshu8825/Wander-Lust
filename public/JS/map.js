@@ -1,4 +1,4 @@
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
+mapboxgl.accessToken = mapTopken;
 
 const map = new mapboxgl.Map({
   container: "map", // container ID
@@ -8,6 +8,5 @@ const map = new mapboxgl.Map({
   zoom: 10, // starting zoom
 });
 
-const marker = new mapboxgl.Marker({ color: "red" })
-  .setLngLat(coordinates)
-  .addTo(map);
+const marker = new mapboxgl.Marker({ color: 'red' }).setLngLat(coordinates).addTo(map);
+
