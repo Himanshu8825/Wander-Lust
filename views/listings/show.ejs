@@ -5,7 +5,7 @@
         const coordinates = <%-JSON.stringify(listing.geometry.coordinates) %>;
 
     </script>
-    <body>
+
 
         <div class="row">
             <div class="col-8 offset-3">
@@ -94,7 +94,9 @@
                                     </p>
                                     <p class="card-text"><%= review.comment %></p>                                
                                    <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST" class="mb-3">
+                                       <% if (currUser) { %>
                                         <button class="btn btn-sm btn-dark">Delete</button>
+                                       <% } %>
                                     </form>
                                 </div>
                             </div>
@@ -112,6 +114,4 @@
         </div>
   
         <script src="/js/map.js"></script>      
-
-    </body>
     
