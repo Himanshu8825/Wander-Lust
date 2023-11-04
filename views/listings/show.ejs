@@ -2,7 +2,7 @@
 
     <script>
         const mapTopken = "<%= process.env.MAPBOX_TOKEN%>";
-        const coordinates = '<%-JSON.stringify(listing.geometry.coordinates) %>';
+        const coordinates = <%-JSON.stringify(listing.geometry.coordinates) %>;
 
     </script>
 
@@ -94,7 +94,7 @@
                                     </p>
                                     <p class="card-text"><%= review.comment %></p>                                
                                    <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST" class="mb-3">
-                                       <% if (currUser) { %>
+                                       <% if (currUser && currUser._id.equals(listing.owner._id)) { %>
                                         <button class="btn btn-sm btn-dark">Delete</button>
                                        <% } %>
                                     </form>
