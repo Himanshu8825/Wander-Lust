@@ -5,6 +5,12 @@ body {
     min-height: 100vh;
 }
 
+.brand {
+    text-decoration: none;
+    /* background-color: #fe424d; */
+    color: #474242c4;
+}
+
 .container {
     flex: 1;
 }
@@ -241,7 +247,7 @@ label {
     color: #999999;
 }
 
-#map{
+#map {
     width: 90vh;
     height: 400px;
 }
