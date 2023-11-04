@@ -1,6 +1,4 @@
-mapboxgl.accessToken = mapTopken;
-
-//mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace 'YOUR_MAPBOX_ACCESS_TOKEN' with your actual Mapbox access token
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
 const map = new mapboxgl.Map({
   container: "map", // container ID
@@ -10,5 +8,6 @@ const map = new mapboxgl.Map({
   zoom: 10, // starting zoom
 });
 
-const marker = new mapboxgl.Marker({ color: 'red' }).setLngLat(coordinates).addTo(map);
-
+const marker = new mapboxgl.Marker({ color: "red" })
+  .setLngLat(coordinates)
+  .addTo(map);
